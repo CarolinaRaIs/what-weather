@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
+    <!--Font Awesome for weather icons-->
+    <script src="https://kit.fontawesome.com/699c7f9e0a.js" crossorigin="anonymous"></script>
 </head>
 
 <!-- Header -->
@@ -37,14 +39,28 @@
                 <form id="search-form" class="weather-form">
                     <input type="text" id="searchInput" class="form-control" type="text" placeholder="Gotham">
                     <!-- Search Button-->
-                    <!-- class="input-group-append" = Bootstrap class that is used to append an element to an input group 
-                        (button = extra element to input text). -->
                         <button type="button" class="btn btn-info btn-block my-3" id="searchBtn">Search</button>
                 </form>
             </div>
-            
         </div>
     </div>
+
+    <!--Weather forecast-->
+    <!-- col = (12- searchCol columns)= (12-4)= (8)-->
+    <div class="col-9">
+        <!-- "card"= Bootstrap class, container for "card-body"-->
+        <div class="card" id="currentWeatherContainer">
+            <!-- "card-body" = Bootstrap class is used to enclose the main content of a card.-->
+            <div class="card-body" id="currentWeather">
+                <h3 class="card-body">Weather for</h3>
+                <img src="">
+            </div>
+        </div>
+    </div>
+
+
+
+
     <!-- Link javaScript-->
     <script src="./script.js"></script>
 </body>
