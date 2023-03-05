@@ -45,15 +45,108 @@
         </div>
     </div>
 
-    <!--Weather forecast-->
+    <!-- PREVIOUSLY SEARCHED CITIES LISTED-->
+    <div class="list-group" id="searchCityList">
+        <!-- Fill in with previously searched cities-->
+    </div>
+
+
+    <!--WEATHER FORECAST SECTION-->
     <!-- col = (12- searchCol columns)= (12-4)= (8)-->
     <div class="col-9">
         <!-- "card"= Bootstrap class, container for "card-body"-->
         <div class="card" id="currentWeatherContainer">
             <!-- "card-body" = Bootstrap class is used to enclose the main content of a card.-->
             <div class="card-body" id="currentWeather">
-                <h3 class="card-body">Weather for</h3>
-                <img src="">
+                <h3 class="card-title">Weather for <span class="cityWord">City</span>
+                <!-- Font awesome layout: 
+                1. the `fa-solid` style class for solid style (for other styles need Pro membership in fontAwesome)
+                2. the `clouds` icon with the `fa-` prefix -->
+                <i class="fa-solid fa-clouds"></i>
+                </h3>
+                <p class="card-text">Temperature: </p>
+                <p class="card-text">Wind: </p>
+                <p class="card-text">Humidity: </p>
+            </div>
+
+            <!-- 5-DAYS OF FORECAST -->
+            <div class="forecastContainer">
+                <div id="weatherForecast">
+                    <h3 class="card-title m-3">5-Day Forecast</h3>
+                    <!-- Layout cards horizontally below card title-->
+                    <!-- "card-deck"= Bootstrap class used to group multiple cards together and create a horizontal layout with equal-width and height columns. -->
+                    <div class="card-deck">
+
+                        <!-- 1ST DAY-->
+                        <div class="card mt-3 mb-3" id="day1">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
+                            <div class="card-body">
+                                <h5 class="card-title">3/6/2023
+                                    <i class="fa-solid fa-clouds"></i>
+                                    <p class="card-text">Temperature:</p>
+                                    <p class="card-text">Wind:</p>
+                                    <p class="card-text">Humidity:</p>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!-- 2ND DAY-->
+                        <div class="card mt-3 mb-3" id="day2">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
+                            <div class="card-body">
+                                <h5 class="card-title">3/6/2023
+                                    <i class="fa-solid fa-clouds"></i>
+                                    <p class="card-text">Temperature:</p>
+                                    <p class="card-text">Wind:</p>
+                                    <p class="card-text">Humidity:</p>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!-- 3RD DAY-->
+                        <div class="card mt-3 mb-3" id="day3">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
+                            <div class="card-body">
+                                <h5 class="card-title">3/6/2023
+                                    <i class="fa-solid fa-clouds"></i>
+                                    <p class="card-text">Temperature:</p>
+                                    <p class="card-text">Wind:</p>
+                                    <p class="card-text">Humidity:</p>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!-- 4TH DAY -->
+                        <div class="card mt-3 mb-3" id="day4">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
+                            <div class="card-body">
+                                <h5 class="card-title">3/6/2023
+                                    <i class="fa-solid fa-clouds"></i>
+                                    <p class="card-text">Temperature:</p>
+                                    <p class="card-text">Wind:</p>
+                                    <p class="card-text">Humidity:</p>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!-- 5th DAY -->
+                        <div class="card mt-3 mb-3" id="day5">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
+                            <div class="card-body">
+                                <h5 class="card-title">3/6/2023
+                                    <i class="fa-solid fa-clouds"></i>
+                                    <p class="card-text">Temperature:</p>
+                                    <p class="card-text">Wind:</p>
+                                    <p class="card-text">Humidity:</p>
+                                </h5>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </div>
         </div>
     </div>
