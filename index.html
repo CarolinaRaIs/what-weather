@@ -25,16 +25,26 @@
 
 <body>
     <!-- Search bar on the side-->
-    <aside> 
-        <div>
-            <h1 for="city-search-label">Search for a city:</h1>
-            <form id="search-form" class="weather-form">
-                <input id="search-input" class="weather-form-input" type="text" placeholder="Search!">
-    
-                <button class="btn btn-info btn-block">Search</button>
-            </form>
+    <!-- Bootstrap: 
+        Container -> row -> column-->
+    <div class="container-fluid"> 
+        <!--Row-->
+        <div class="row">
+            <!--Column-->
+            <div class="searchCol col-4">
+                <!-- Input field treated as a form with buttons-->
+                <h2 for="city-search-label">Search for a City:</h2>
+                <form id="search-form" class="weather-form">
+                    <input type="text" id="searchInput" class="form-control" type="text" placeholder="Gotham">
+                    <!-- Search Button-->
+                    <!-- class="input-group-append" = Bootstrap class that is used to append an element to an input group 
+                        (button = extra element to input text). -->
+                        <button type="button" class="btn btn-info btn-block my-3" id="searchBtn">Search</button>
+                </form>
+            </div>
+            
         </div>
-    </aside>
+    </div>
     <!-- Link javaScript-->
     <script src="./script.js"></script>
 </body>
