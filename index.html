@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather Dashboard</title>
     <!-- Link google fonts and css and bootstrao-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&family=Merriweather:wght@700&display=swap"
     rel="stylesheet" />
     <link rel="stylesheet" href="./style.css" />
     <!--Font Awesome for weather icons-->
-    <script src="https://kit.fontawesome.com/699c7f9e0a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+     <!--<script src="https://kit.fontawesome.com/699c7f9e0a.js" crossorigin="anonymous"></script> -->
 </head>
 
 <!-- Header -->
@@ -36,51 +37,74 @@
             <div class="searchCol col-4">
                 <!-- Input field treated as a form with buttons-->
                 <h2 for="city-search-label">Search for a City:</h2>
+
                 <form id="search-form" class="weather-form">
+
                     <input type="text" id="searchInput" class="form-control" type="text" placeholder="Gotham">
-                    <!-- Search Button-->
+                    <div class="input-group-append">
+                        <!-- Search Button-->
                         <button type="button" class="btn btn-info btn-block my-3" id="searchBtn">Search</button>
+                        <div>
+                            <!--Add search icon-->
+                        </div>
+                    </div>
+
+                    <!-- PREVIOUSLY SEARCHED CITIES LISTED-->
+                    <div class="list-group" id="searchCityList">
+                    <!-- Fill in with previously searched cities-->
+                    </div>   
                 </form>
+
+                <!--WEATHER FORECAST SECTION-->
+                <!-- col = (12- searchCol columns)= (12-4)= (8)-->
+                <div class="col-9">
+                    <!-- "card"= Bootstrap class, container for "card-body"-->
+                    <div class="card" id="currentWeatherContainer"><!--Fill In Current Weather Info--></div>
+                    <!-- 5-DAY FORECAST -->
+                    <div class="forecastContainer"><!--Fill in date, temperature, wind, and humidity --></div>
+                </div>
+                
+
             </div>
         </div>
     </div>
 
-    <!-- PREVIOUSLY SEARCHED CITIES LISTED-->
-    <div class="list-group" id="searchCityList">
-        <!-- Fill in with previously searched cities-->
-    </div>
-
-
-    <!--WEATHER FORECAST SECTION-->
+    <!--WEATHER FORECAST SECTION EXAMPLE-->
     <!-- col = (12- searchCol columns)= (12-4)= (8)-->
-    <div class="col-9">
+<!--    <div class="col-9">
         <!-- "card"= Bootstrap class, container for "card-body"-->
-        <div class="card" id="currentWeatherContainer">
+ <!--       <div class="card" id="currentWeatherContainer">
             <!-- "card-body" = Bootstrap class is used to enclose the main content of a card.-->
-            <div class="card-body" id="currentWeather">
-                <h3 class="card-title">Weather for <span class="cityWord">City</span>
-                <!-- Font awesome layout: 
-                1. the `fa-solid` style class for solid style (for other styles need Pro membership in fontAwesome)
-                2. the `clouds` icon with the `fa-` prefix -->
-                <i class="fa-solid fa-clouds"></i>
-                </h3>
-                <p class="card-text">Temperature: </p>
-                <p class="card-text">Wind: </p>
-                <p class="card-text">Humidity: </p>
+  <!--          <div class="card-body" id="currentWeather">
+                <div class="card-body">
+                    <h3 id="cityName" class="card-title align-middle"></h3>
+                    <!-- Font awesome layout: 
+                    1. the `fa-solid` style class for solid style (for other styles need Pro membership in fontAwesome)
+                    2. the `clouds` icon with the `fa-` prefix -->
+                    <!--<i class="fa-solid fa-clouds"></i> -->
+ <!--                   <img id="currentWeatherPic" alt="">
+                    <p id="temperature" class="card-text"></p>
+                    <p id="wind" class="card-text"></p>
+                    <p id="humidity" class="card-text"></p>
+                </div>
             </div>
+         
 
-            <!-- 5-DAYS OF FORECAST -->
-            <div class="forecastContainer">
-                <div id="weatherForecast">
-                    <h3 class="card-title m-3">5-Day Forecast</h3>
+            <!-- 5-DAY FORECAST EXAMPLE -->
+ <!--           <div class="forecastContainer">
+                <!--d-none = Bootstrap class to hide an element (not take up soace in layout)-->
+ <!--               <div id="fiveDayForecast" class="row d-none">
+                    <div class="col-12">
+                        <h3 class="card-title m-3">5-Day Forecast</h3>
+                    </div>
                     <!-- Layout cards horizontally below card title-->
                     <!-- "card-deck"= Bootstrap class used to group multiple cards together and create a horizontal layout with equal-width and height columns. -->
-                    <div class="card-deck">
 
+ <!--                   <div class="card-deck"> 
                         <!-- 1ST DAY-->
-                        <div class="card mt-3 mb-3" id="day1">
+ <!--                      <div class="card mt-3 mb-3" id="day1"> 
                             <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
-                            <div class="card-body">
+ <!--                         <div class="card-body">
                                 <h5 class="card-title">3/6/2023
                                     <i class="fa-solid fa-clouds"></i>
                                     <p class="card-text">Temperature:</p>
@@ -88,12 +112,12 @@
                                     <p class="card-text">Humidity:</p>
                                 </h5>
                             </div>
-                        </div>
+                        </div> 
 
                         <!-- 2ND DAY-->
-                        <div class="card mt-3 mb-3" id="day2">
-                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
-                            <div class="card-body">
+ <!--                       <div class="card mt-3 mb-3" id="day2">
+                            <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it--> 
+ <!--                          <div class="card-body">
                                 <h5 class="card-title">3/6/2023
                                     <i class="fa-solid fa-clouds"></i>
                                     <p class="card-text">Temperature:</p>
@@ -104,9 +128,9 @@
                         </div>
 
                         <!-- 3RD DAY-->
-                        <div class="card mt-3 mb-3" id="day3">
+ <!--                       <div class="card mt-3 mb-3" id="day3">
                             <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
-                            <div class="card-body">
+ <!--                           <div class="card-body">
                                 <h5 class="card-title">3/6/2023
                                     <i class="fa-solid fa-clouds"></i>
                                     <p class="card-text">Temperature:</p>
@@ -117,9 +141,9 @@
                         </div>
 
                         <!-- 4TH DAY -->
-                        <div class="card mt-3 mb-3" id="day4">
+ <!--                       <div class="card mt-3 mb-3" id="day4">
                             <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
-                            <div class="card-body">
+ <!--                          <div class="card-body">
                                 <h5 class="card-title">3/6/2023
                                     <i class="fa-solid fa-clouds"></i>
                                     <p class="card-text">Temperature:</p>
@@ -130,9 +154,9 @@
                         </div>
 
                         <!-- 5th DAY -->
-                        <div class="card mt-3 mb-3" id="day5">
+ <!--                       <div class="card mt-3 mb-3" id="day5">
                             <!-- Contents of card, ensure there is a margin between content of other cards horizontal to it-->
-                            <div class="card-body">
+ <!--                           <div class="card-body">
                                 <h5 class="card-title">3/6/2023
                                     <i class="fa-solid fa-clouds"></i>
                                     <p class="card-text">Temperature:</p>
@@ -142,7 +166,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> 
 
 
                 </div>
@@ -150,11 +174,12 @@
             </div>
         </div>
     </div>
-
+-->
 
 
 
     <!-- Link javaScript-->
     <script src="./script.js"></script>
+
 </body>
 </html>
